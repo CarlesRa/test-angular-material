@@ -1,0 +1,44 @@
+<app-toolbar [drawer]="drawer"></app-toolbar>
+
+<mat-drawer-container class="drawer-container" autosize>
+    <mat-drawer #drawer class="drawer-sidenav" mode="side">
+        <header>
+            <h2>Menú</h2>
+        </header>
+
+        <mat-divider></mat-divider>
+
+        <mat-list>
+
+            <mat-selection-list [multiple]="false">
+
+                <mat-list-option (click)="showMusicContents()">
+                    <mat-icon mat-list-icon>library_music</mat-icon>
+                    Ver Discos
+                </mat-list-option>
+
+                <mat-list-option (click)="showPersonContents()">
+                    <mat-icon mat-list-icon>people</mat-icon>
+                    Ver Personas
+                </mat-list-option>
+
+                <mat-list-option (click)="showTrainContens()">
+                    <mat-icon mat-list-icon>subway</mat-icon>
+                    Ver Trenes
+                </mat-list-option>
+
+            </mat-selection-list>
+
+        </mat-list>
+
+    </mat-drawer>
+    <mat-drawer-content class="container">
+        <aside class="cards-content">
+            <app-card [cardContents]="contents"></app-card>
+        </aside>
+
+        <article>
+            <h1>Soy el contenido derecho</h1>
+        </article>
+    </mat-drawer-content>
+</mat-drawer-container>
